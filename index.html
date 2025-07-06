@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecurePass Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="generator-card">
+        <div class="app-header">
+          <div class="logo">
+            <i class="fas fa-lock"></i>
+            <h1>SecurePass</h1>
+          </div>
+          <p class="subtitle">Generate strong, secure passwords instantly</p>
+        </div>
+
+        <div class="password-display-container">
+          <div class="password-display">
+            <input type="text" id="password" readonly />
+            <div class="password-actions">
+              <button
+                id="refresh-btn"
+                class="icon-btn"
+                title="Generate new password"
+              >
+                <i class="fas fa-sync-alt"></i>
+              </button>
+              <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+                <i class="far fa-copy"></i>
+              </button>
+            </div>
+          </div>
+          <div class="password-strength">
+            <div class="strength-meter">
+              <div class="strength-bar"></div>
+            </div>
+            <span id="strength-text">Medium</span>
+          </div>
+        </div>
+
+        <div class="controls-container">
+          <div class="control-group">
+            <label class="control-label">Password Length</label>
+            <div class="length-control">
+              <span id="length-value">12</span>
+              <input type="range" id="length" min="4" max="32" value="12" />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Character Types</label>
+            <div class="character-options">
+              <label class="option-toggle">
+                <input type="checkbox" id="uppercase" checked />
+                <span class="toggle-slider"></span>
+                <span class="option-label">Uppercase (A-Z)</span>
+              </label>
+              <label class="option-toggle">
+                <input type="checkbox" id="lowercase" checked />
+                <span class="toggle-slider"></span>
+                <span class="option-label">Lowercase (a-z)</span>
+              </label>
+              <label class="option-toggle">
+                <input type="checkbox" id="numbers" checked />
+                <span class="toggle-slider"></span>
+                <span class="option-label">Numbers (0-9)</span>
+              </label>
+              <label class="option-toggle">
+                <input type="checkbox" id="symbols" checked />
+                <span class="toggle-slider"></span>
+                <span class="option-label">Symbols (!@#$)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Options</label>
+            <div class="advanced-options">
+              <label class="option-toggle">
+                <input type="checkbox" id="exclude-similar" />
+                <span class="toggle-slider"></span>
+                <span class="option-label"
+                  >Exclude similar characters (i,l,1,etc.)</span
+                >
+              </label>
+              <label class="option-toggle">
+                <input type="checkbox" id="exclude-ambiguous" />
+                <span class="toggle-slider"></span>
+                <span class="option-label"
+                  >Exclude ambiguous characters ({ } [ ])</span
+                >
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="primary-btn">
+          <i class="fas fa-key"></i> Generate Password
+        </button>
+      </div>
+
+      <div class="password-history hidden" id="history-panel">
+        <h3>Recently Generated</h3>
+        <ul id="password-history"></ul>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">Password copied to clipboard!</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
