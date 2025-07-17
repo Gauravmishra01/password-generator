@@ -100,6 +100,6 @@ Distributed under the **MIT License**. See `LICENSE` for details.
 ## 📬 Contact
 
 * **Author**: Gaurav Mishra
-* **Email**: [your-email@example.com](gauravmishra92812@gmail.com)
-* **GitHub**: [Gauravmishra01](https://github.com/Gauravmishra01)
+* **Email**: [gauravmishra92812@gmail.com]
+* **GitHub**: [[Gauravmishra01](https://github.com/Gauravmishra01)]
 
